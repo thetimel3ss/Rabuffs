@@ -352,8 +352,16 @@ SlashCmdList["RABUFFSQ"] = function(msg)
         _, _, msg = string.find(msg, "not (.+)");
     end
 
-    if (string.find(msg, "^(%a+) ?([1-8]*) ?([mlprdhswa]*)$") ~= nil) then
-        RAB_BuffCheckOutput(msg, target, invert);
+    -- Parse /rabq into the table expected by RAB_BuffCheckOutput.
+    -- WoW 1.12.1 uses Lua 5.0: string.find provides capture values.
+    local _, _, buffKey, groups, classes = string.find(msg, "^(%a+) ?([1-8]*) ?([mlprdhswa]*)$")
+    if (buffKey) then
+        local query = {
+            buffKey = buffKey,
+            groups = groups or "",
+            classes = classes or ""
+        };
+        RAB_BuffCheckOutput(query, target, invert);
     else
         RAB_Print(sRAB_Slash_UnrecognizedQuery, "warn");
     end
