@@ -92,3 +92,23 @@ Use `not` prefix to invert queries (show who's missing the buff).
 
 ![screenshot](ss.png?raw=true "screenshot")
 ![screenshot2](ss2.png?raw=true "screenshot2")
+
+## Current behavior and command updates
+
+The following notes supplement the original documentation above:
+
+- RABuffs targets the WoW Vanilla 1.12 API (`Interface: 11200`). Its buff definitions also include custom server content. CT_RaidAssist and SlashHelp are optional integrations.
+- Profiles store bar layouts separately for each character and realm. `Default` is the fallback profile and cannot be deleted.
+- In addition to buffs and personal weapon enchants, queries cover group health, mana, alive counts, AFK/offline or out-of-sight players, combat and PvP status, and specific equipment.
+- Clicking supported bars can cast buffs or use associated items. Health and alive bars can attempt resurrection for supported classes.
+
+Command corrections and additional examples:
+
+- Use `/rabq info` to display your target's buff/debuff names and textures; `/rab info` listed above is not implemented.
+- Use `/rabq raid pwf` for Fortitude; `fort` in the earlier example is not a valid query key.
+- The full query syntax is `/rabq [target] [not] <query> [groups] [classes]`.
+- `not` reverses the query's normal report. The default reporting direction depends on the query, so it does not always mean "show missing buffs", including for the Power Word: Shield example above.
+- `/rabq` or `/rabq help` displays query help.
+- `/rabq health`, `/rabq mana`, and `/rabq alive` report group health, mana, and alive players.
+- `/rabq ishere` reports AFK, offline, or out-of-sight players.
+- `/rabq onycloak` checks the Onyxia Scale Cloak.
