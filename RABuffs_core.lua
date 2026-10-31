@@ -4,8 +4,8 @@
 
 RAB_Lock = 1;
 
-RABuffs_Version = "0.12.0";
-RABuffs_DeciVersion = 0.100300;
+RABuffs_Version = "0.12.1";
+RABuffs_DeciVersion = 0.120100;
 
 RABui_Settings = {};
 RABui_DefSettings = {

@@ -11,7 +11,7 @@ sRAB_LOCALIZATION, sRAB_Localization_UI, sRAB_Localization_Output, sRAB_Localiza
 "|c00ff9922Automatic spellbook|r";
 
 sRAB_ChangeLog2 = [[<html><body>
-			<h1 align="center">RABuffs Version 0.12.0</h1>
+			<h1 align="center">RABuffs Version 0.12.1</h1>
 			<h2>General</h2>
 			<p> - Hide in combat option.</p>
 			<p> - Hide active buffs/consumes option.</p>
